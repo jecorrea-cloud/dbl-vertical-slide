@@ -22,6 +22,18 @@ downButton.addEventListener("click", () => {
 });
 
 const changeSlide = (direction) => {
-  sliderHeight = sliderContainer.clientHeight;
+  const sliderHeight = sliderContainer.clientHeight;
   //   console.log(sliderHeight);
+
+  if (direction === "up") {
+    activeSlideIndex++;
+    if (activeSlideIndex > slidesLength - 1) {
+      activeSlideIndex = 0;
+    }
+  } else if (direction === "down") {
+  }
+
+  slideRight.style.transform = `translateY(-${
+    activeSlideIndex * sliderHeight
+  }px)`;
 };
